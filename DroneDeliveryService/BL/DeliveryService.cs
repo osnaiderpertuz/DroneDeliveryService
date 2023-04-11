@@ -77,7 +77,7 @@ namespace DroneDeliveryService.BL
                 var trips = ArrangeTrips(validLocations, drone.MaximunWeight);
                 if(trips.Any()) delivery.Trips.AddRange(trips);
             }
-            if (!delivery.DroneCanCarryAllPackages)//(invalidLocations.Any())
+            if (!delivery.DroneCanCarryAllPackages)
             {
                 delivery.Observations = $"{drone} can't carry the package(s) to {string.Join(',', invalidLocations)}, because it exceeds the maximum weight it can carry ({drone.MaximunWeight}). ";
             }
